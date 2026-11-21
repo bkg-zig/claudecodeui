@@ -1,4 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import MemoryApiView from '@/modules/termhive/MemoryApiView';
+import MemoryView from '@/modules/termhive/MemoryView';
+import TermHiveView from '@/modules/termhive/TermHiveView';
 import { I18nextProvider } from 'react-i18next';
 
 import { ThemeProvider } from '@/shared/context/ThemeContext';
@@ -123,6 +127,9 @@ export default function App() {
                     <Routes>
                       <Route path="/" element={<ProjectWorkspaceRoute />} />
                       <Route path="/session/:sessionId" element={<ProjectWorkspaceRoute />} />
+                      <Route path="/termhive" element={<TermHiveView />} />
+                      <Route path="/memory" element={<MemoryView />} />
+                      <Route path="/memory-api" element={<MemoryApiView />} />
                     </Routes>
                   </Router>
                 </ProtectedRoute>
